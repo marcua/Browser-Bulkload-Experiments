@@ -1,4 +1,4 @@
-data <- read.csv("~/browser.csv",header=F,dec='.',na.strings=c('XXXXXXX'))
+data <- read.csv("~/bulkload-experiment/browser.csv",header=F,dec='.',na.strings=c('XXXXXXX'))
 
 
 names(data) <- c('filesize', 'strategy', 'trial', 'time')
@@ -10,6 +10,8 @@ averagedData <- aggregate(data,
 
 #Group.1 is the filesize
 #Group.2 is the strategy
+
+pdf(file="jsonvssqlite.pdf", height=3.5, width=5)
 
 plot_colors <- c(rgb(r=0.0,g=0.0,b=0.9), "red", "forestgreen")
 
@@ -47,3 +49,5 @@ lines(
 # Create a legend in the top-left corner that is slightly  
 # smaller and has no border
 legend(1, 10000, c("SQLite Binary", "JSON"), cex=0.8, col=plot_colors, lty=c(1,2), lwd=2, bty="n");
+
+dev.off();

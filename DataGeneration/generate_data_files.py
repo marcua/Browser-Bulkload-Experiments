@@ -4,8 +4,7 @@ import random
 
 alphabet = 'abcdefghijklmnopqrstuvwxyz'
 schema = ('var1', 'var2', 'var3', 'var4', 'var5')
-#rowcounts = (500,1000,5000,10000,50000,100000,200000)
-rowcounts = (5,)
+rowcounts = (5,500,1000,5000,10000,50000)
 
 def randstring(length):
     string = ''
